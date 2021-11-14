@@ -1,6 +1,8 @@
 #include <QStringLiteral>
 #include <QList>
 #include "qtpainterobstacle.h"
+#include "qdrawer.h"
+#include "vehicletrafficobject.h"
 
 using namespace std;
 
@@ -37,7 +39,10 @@ void QtPainterObstacle::drawGrid(QPainter &qPainter)
     RoadObjectPainter roadObjPainter;
     RoadMarkingsTrafficObject roadMarkingsTrafficObject(_widgetWidth, _widgetHeight);
     QList<TrafficObject*> listTrfObjs;
+    QDrawer drawer(_widgetWidth, _widgetHeight);
+    VehicleTrafficObject vehicle(drawer);
     listTrfObjs.append(&roadMarkingsTrafficObject);
+    listTrfObjs.append(&vehicle);
     roadObjPainter.drawObjects(qPainter, listTrfObjs);
 
 }
