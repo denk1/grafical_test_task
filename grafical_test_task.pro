@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,6 +17,7 @@ SOURCES += \
     roadmarkingstrafficobject.cpp \
     roadobjectpainter.cpp \
     screenwidget.cpp \
+    tcpsocket.cpp \
     trafficobject.cpp \
     vehicletrafficobject.cpp
     screenwidget.cpp
@@ -31,6 +32,7 @@ HEADERS += \
     roadmarkingstrafficobject.h \
     roadobjectpainter.h \
     screenwidget.h \
+    tcpsocket.h \
     trafficobject.h \
     vehicletrafficobject.h
     screenwidget.h

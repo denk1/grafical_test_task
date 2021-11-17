@@ -4,7 +4,8 @@
 ScreenWidget::ScreenWidget(QWidget *parent) :
     QWidget(parent),
     painter(this),
-    painterObstacle(&painter)
+    painterObstacle(&painter),
+    tcpSocket(nullptr, &painterObstacle)
 {
     QPalette pal = palette();
     pal.setColor(QPalette::Background, Qt::black);
@@ -14,6 +15,7 @@ ScreenWidget::ScreenWidget(QWidget *parent) :
     sizePolicy.setHorizontalPolicy(QSizePolicy::Expanding);
     sizePolicy.setVerticalPolicy(QSizePolicy::Expanding);
     this->setSizePolicy(sizePolicy);
+    tcpSocket.doConnect();
 
 }
 

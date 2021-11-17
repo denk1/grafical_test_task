@@ -18,6 +18,6 @@ VehicleTrafficObject::VehicleTrafficObject(QDrawer& drawer, QPointF position, fl
 void VehicleTrafficObject::draw(QPainter &painter)
 {
     QPoint point = qDrawer_.convertPointIntoScreenCooords(position_.x(), position_.y());
-    QPoint point_hull = qDrawer_.convertPointIntoScreenDistance( w_, l_);
+    QPoint point_hull = qDrawer_.convertPointIntoScreenDistance( w_ * 2.0f, l_ * 2.0f);
     painter.drawRect(point.x() - point_hull.x()/2, point.y() - point_hull.y()/2, point_hull.x(), point_hull.y());
 }

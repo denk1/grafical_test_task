@@ -21,7 +21,14 @@ class QtPainterObstacle : public PainterObstacle
 public:
     QtPainterObstacle(QPainter* painter);
     void draw(QWidget* widget ) override;
+    QList<TrafficObject*>& getDynamicObjects();
+    int getWidgetHeight() {
+        return _widgetHeight;
+    }
 
+    int getWidgetWeight() {
+        return _widgetWidth;
+    }
 
 private:
     int getScreenX(float x);
@@ -36,6 +43,8 @@ private:
     const int SHIFT_TITILE = 15;
     std::chrono::system_clock::time_point _prev_time_point;
     accumulator_set<double, stats<tag::rolling_mean> >  acc;
+    QList<TrafficObject*> dynamicObjs_;
+
 };
 
 #endif // QTPAINTEROBSTACLE_H

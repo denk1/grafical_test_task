@@ -7,6 +7,7 @@ class TrafficObject
 {
 public:
     TrafficObject();
+    virtual ~TrafficObject() {};
     virtual void draw(QPainter& painter) = 0;
 private:
 

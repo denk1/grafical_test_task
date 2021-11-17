@@ -24,6 +24,11 @@ void QtPainterObstacle::draw(QWidget *widget)
     drawGrid(painter);
 }
 
+QList<TrafficObject *> &QtPainterObstacle::getDynamicObjects()
+{
+    return dynamicObjs_;
+}
+
 int QtPainterObstacle::getScreenX(float x)
 {
      return (x + 2.5) / 5.0 * static_cast<float>(_widgetWidth);

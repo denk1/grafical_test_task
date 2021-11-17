@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QPainter>
 #include "qtpainterobstacle.h"
+#include "tcpsocket.h"
 
 class ScreenWidget : public QWidget
 {
@@ -18,6 +19,7 @@ private:
     void paintEvent(QPaintEvent *event) override;
     QPainter painter;
     QtPainterObstacle painterObstacle;
+    TcpSocket tcpSocket;
 };
 
 #endif // SCREENWIDGET_H
