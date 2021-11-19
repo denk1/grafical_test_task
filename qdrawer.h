@@ -14,8 +14,8 @@ public:
 private:
     int width_;
     int height_;
-    float FRONT_BORDER = 30;
-    float REAR_BORDER = -30;
+    float FRONT_BORDER = 25;
+    float REAR_BORDER = -25;
     float LEFT_BORDER = -25;
     float RIGHT_BORDER = 25;
 };

@@ -4,6 +4,7 @@
 #include <chrono>
 #include <QPainter>
 #include <QWidget>
+#include <mutex>
 #include "painterobstacle.h"
 #include "roadmarkingstrafficobject.h"
 #include "roadobjectpainter.h"
@@ -26,8 +27,12 @@ public:
         return _widgetHeight;
     }
 
-    int getWidgetWeight() {
+    int getWidgetWidth() {
         return _widgetWidth;
+    }
+
+    std::mutex &getMutex() {
+        return mutex_;
     }
 
 private:
@@ -44,7 +49,7 @@ private:
     std::chrono::system_clock::time_point _prev_time_point;
     accumulator_set<double, stats<tag::rolling_mean> >  acc;
     QList<TrafficObject*> dynamicObjs_;
-
+    std::mutex mutex_;
 };
 
 #endif // QTPAINTEROBSTACLE_H

@@ -12,5 +12,5 @@ QPoint QDrawer::convertPointIntoScreenCooords(float x, float y)
 
 QPoint QDrawer::convertPointIntoScreenDistance(float x, float y)
 {
-    return QPoint( x/RIGHT_BORDER * width_, y/FRONT_BORDER * height_);
+    return QPoint( x/(RIGHT_BORDER *2) * width_, y/(FRONT_BORDER *2) * height_);
 }

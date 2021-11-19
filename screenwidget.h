@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <QTimer>
 #include "qtpainterobstacle.h"
 #include "tcpsocket.h"
 
@@ -20,6 +21,7 @@ private:
     QPainter painter;
     QtPainterObstacle painterObstacle;
     TcpSocket tcpSocket;
+    QTimer timer_;
 };
 
 #endif // SCREENWIDGET_H

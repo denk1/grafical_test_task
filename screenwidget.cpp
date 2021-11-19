@@ -15,6 +15,8 @@ ScreenWidget::ScreenWidget(QWidget *parent) :
     sizePolicy.setHorizontalPolicy(QSizePolicy::Expanding);
     sizePolicy.setVerticalPolicy(QSizePolicy::Expanding);
     this->setSizePolicy(sizePolicy);
+    connect(&timer_,SIGNAL(timeout()),this, SLOT(update()));
+        timer_.start(50);
     tcpSocket.doConnect();
 
 }

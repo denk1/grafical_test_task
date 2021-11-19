@@ -45,9 +45,11 @@ void QtPainterObstacle::drawGrid(QPainter &qPainter)
     RoadMarkingsTrafficObject roadMarkingsTrafficObject(_widgetWidth, _widgetHeight);
     QList<TrafficObject*> listTrfObjs;
     QDrawer drawer(_widgetWidth, _widgetHeight);
-    VehicleTrafficObject vehicle(drawer);
+    VehicleTrafficObject vehicle(drawer, QPointF(0, 0), 1.8f, 4.4f);
     listTrfObjs.append(&roadMarkingsTrafficObject);
     listTrfObjs.append(&vehicle);
+    std::lock_guard<std::mutex> guard(mutex_);
+    listTrfObjs.append(dynamicObjs_);
     roadObjPainter.drawObjects(qPainter, listTrfObjs);
 
 }
